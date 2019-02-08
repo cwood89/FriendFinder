@@ -1,0 +1,53 @@
+body, html {
+  height: 100%;
+}
+
+#main-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/friends.jpg");
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+#img-text > * {
+  padding:2px;
+  margin: 2px;
+}
+
+#img-text {
+  font-family: 'Karla', sans-serif;
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  }
+
+h1 {
+    font-size: 6em;
+  }
+#tag-line {
+    font-size: 2.5em;
+    font-weight: lighter;
+  }
+#start{  
+  margin-top: 20px;
+  background-color:rgba(255, 255, 255, 0.288);
+  -moz-border-radius:23px;
+  -webkit-border-radius:23px;
+  border-radius:23px; 
+  border:2px solid #dcdcdc;
+  display:inline-block;
+  cursor:pointer;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  padding:15px 20px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #e0e0e0;
+}
+#start:hover {
+	background-color:transparent;
+}
