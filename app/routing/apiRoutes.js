@@ -8,6 +8,7 @@ module.exports = function (app) {
 
   app.post("/api/friends", async function (req, res) {
     var newFriend = await req.body;
+    console.log(newFriend);
     var resArr = [];
     // loop through all friends
     for (var i = 0; i < friendData.length; i++) {
@@ -34,6 +35,7 @@ module.exports = function (app) {
     }
 
     friendData.push(newFriend);
+    console.log(match)
     return res.json(match);
   });
 }

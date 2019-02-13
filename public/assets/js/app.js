@@ -38,9 +38,6 @@ function askQuestion() {
 
 container.on("click", "button", function (e) {
   e.preventDefault();
-  // if ($("input[name=answer]:checked").length == 0) {
-  //   alert("Select an option");
-  // };
   switch (counter) {
     case 0:
       user.name = $("#name").val();
@@ -48,21 +45,29 @@ container.on("click", "button", function (e) {
       askQuestion();
       break;
     case 10:
-      user.scores.push(parseInt($("input[name=answer]:checked").val()));
-      $.post("/api/friends", user, function (data) {
-        container.empty();
-        container.append(`
+      if ($("input[name=answer]:checked").length == 0) {
+        alert("Select an option");
+      } else {
+        user.scores.push(parseInt($("input[name=answer]:checked").val()));
+        $.post("/api/friends", user, function (data) {
+          container.empty();
+          container.append(`
         <h2>Your Match</h2>
         <p>Name: ${data.name}</p>
         <img src="${data.photo}" alt="Your Match" width="300px" height="300px">
         `);
-        alert("you have a match");
-      })
+          alert("you have a match");
+        })
+      };
       break;
     default:
-      user.scores.push(parseInt($("input[name=answer]:checked").val()));
-      askQuestion();
-      break;
+      if ($("input[name=answer]:checked").length == 0) {
+        alert("Select an option");
+      } else {
+        user.scores.push(parseInt($("input[name=answer]:checked").val()));
+        askQuestion();
+        break;
+      };
   }
 });
 
